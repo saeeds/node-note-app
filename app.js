@@ -1,3 +1,17 @@
 const fs = require('fs');
+const getNotes =  require('./notes.js');
+const chalk = require('chalk');
+const msg = getNotes();
+var validator = require('validator');
 
-fs.writeFileSync('notes.txt', 'this file was create by node.js');
+console.log(chalk.green(msg));
+console.log(chalk.green('Success!'));
+console.log(validator.isEmail("saed_sharqawi@hotmail.com"));
+fs.writeFileSync('notes.txt', 'My name is saeed alsharqwi');
+fs.appendFileSync('notes.txt', ' data to append');
+
+const error = chalk.bold.red;
+const warning = chalk.keyword('orange');
+
+console.log(error('Error!'));
+console.log(warning('Warning!'));
